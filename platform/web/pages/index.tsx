@@ -100,7 +100,7 @@ const Press: NextPage = () => {
             <Link href="/policies/terms">Terms</Link>
           </div>
           <div className="press__footer-contact">
-            <div>hello@press.shop</div>
+            <div>hello@pressprint.xyz</div>
             <div>A Bolthouse brand. Sister to Anchor.</div>
           </div>
         </footer>

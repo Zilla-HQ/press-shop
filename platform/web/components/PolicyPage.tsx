@@ -28,7 +28,7 @@ export function PolicyPage({ title, children }: { title: string; children: React
             <Link href="/policies/privacy">Privacy</Link>
             <Link href="/policies/terms">Terms</Link>
           </div>
-          <div>hello@press.shop</div>
+          <div>hello@pressprint.xyz</div>
         </footer>
       </div>
       <style jsx global>{`

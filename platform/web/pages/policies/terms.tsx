@@ -26,7 +26,7 @@ export default function Terms() {
 
       <h2>Disputes</h2>
       <p>
-        If something goes wrong, email us first — <strong>hello@press.shop</strong>. We'd
+        If something goes wrong, email us first — <strong>hello@pressprint.xyz</strong>. We'd
         rather solve a problem than escalate it. If we can't resolve it together, disputes
         will be handled under the laws of the United States.
       </p>

@@ -32,7 +32,7 @@ export default function Returns() {
 
       <h2>How to start a return</h2>
       <p>
-        Email <strong>hello@press.shop</strong> with your order number and (for defects) a
+        Email <strong>hello@pressprint.xyz</strong> with your order number and (for defects) a
         photo. We respond within one business day.
       </p>
 

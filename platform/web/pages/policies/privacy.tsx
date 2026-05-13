@@ -34,7 +34,7 @@ export default function Privacy() {
 
       <h2>Your rights</h2>
       <p>
-        Email <strong>hello@press.shop</strong> to request a copy of your data or to ask us to
+        Email <strong>hello@pressprint.xyz</strong> to request a copy of your data or to ask us to
         delete it. We'll respond within 7 days.
       </p>
     </PolicyPage>
