@@ -12,6 +12,10 @@
  *   3. Look up its placement from /mockup-generator/printfiles/<id>
  *      (most non-apparel products use "default" or "front")
  *   4. Add a row here; the storefront auto-renders a card.
+ *
+ * Cover images are Printful's clean stock product photos (the blanks,
+ * no design applied). The customer designs the product on the detail
+ * page; the catalog page is just the canvas.
  */
 
 export type PressProduct = {
@@ -31,7 +35,7 @@ export type PressProduct = {
   printfile: { width: number; height: number };
   /** For embroidery placements, default thread colors used by Printful. */
   embroidery_thread_default?: string[];
-  /** Hero image for the catalog card. Falls back to Printful product photo. */
+  /** Hero image for the catalog card. Printful stock blank photo by default. */
   cover_image?: string;
   /** Lead time copy for the card. */
   lead_time: string;
@@ -50,7 +54,7 @@ export const PRESS_CATALOG: PressProduct[] = [
     default_variant: { color: "Black", size: "M" },
     placement: "front",
     printfile: { width: 1800, height: 2400 },
-    cover_image: "https://cdn.shopify.com/s/files/1/0750/4894/3670/files/press-sample-tee-mockup.jpg?v=1778684587",
+    cover_image: "https://files.cdn.printful.com/products/71/4016_1752236278.jpg",
     lead_time: "Made + shipped in 7–11 days",
   },
   {
@@ -64,7 +68,7 @@ export const PRESS_CATALOG: PressProduct[] = [
     default_variant: { color: "Black", size: "M" },
     placement: "front",
     printfile: { width: 1800, height: 2400 },
-    cover_image: "https://cdn.shopify.com/s/files/1/0750/4894/3670/files/press-sample-hoodie-mockup.jpg?v=1778684599",
+    cover_image: "https://files.cdn.printful.com/products/146/5530_1750160839.jpg",
     lead_time: "Made + shipped in 7–11 days",
   },
 
@@ -81,6 +85,7 @@ export const PRESS_CATALOG: PressProduct[] = [
     placement: "embroidery_front_large",
     printfile: { width: 1650, height: 600 },
     embroidery_thread_default: ["#FFFFFF"],
+    cover_image: "https://files.cdn.printful.com/products/206/7854_1584455281.jpg",
     lead_time: "Made + shipped in 7–11 days",
   },
 
@@ -93,9 +98,10 @@ export const PRESS_CATALOG: PressProduct[] = [
     wholesale_estimate: 11,
     description: "All-over print canvas tote. Roomy, single-color body, full-front print area.",
     printful_catalog_id: 84,
-    default_variant: { color: "White", size: "One size" },
+    default_variant: { color: "Black", size: "15″×15″" },
     placement: "front",
     printfile: { width: 1800, height: 1800 },
+    cover_image: "https://files.cdn.printful.com/products/84/4533_1530790503.jpg",
     lead_time: "Made + shipped in 7–11 days",
   },
 
@@ -111,6 +117,7 @@ export const PRESS_CATALOG: PressProduct[] = [
     default_variant: { color: "White", size: "11 oz" },
     placement: "default",
     printfile: { width: 2700, height: 1050 },
+    cover_image: "https://files.cdn.printful.com/products/19/1320_1663762583.jpg",
     lead_time: "Made + shipped in 7–11 days",
   },
   {
@@ -124,6 +131,7 @@ export const PRESS_CATALOG: PressProduct[] = [
     default_variant: { color: "White", size: "20oz" },
     placement: "front",
     printfile: { width: 2795, height: 2100 },
+    cover_image: "https://files.cdn.printful.com/products/909/23470_1759304140.jpg",
     lead_time: "Made + shipped in 7–11 days",
   },
 
@@ -139,6 +147,7 @@ export const PRESS_CATALOG: PressProduct[] = [
     default_variant: { color: "White", size: "12″×16″" },
     placement: "default",
     printfile: { width: 4800, height: 3600 },
+    cover_image: "https://files.cdn.printful.com/products/1/1349_1527679043.jpg",
     lead_time: "Made + shipped in 7–11 days",
   },
 
@@ -154,6 +163,7 @@ export const PRESS_CATALOG: PressProduct[] = [
     default_variant: { color: "White", size: "3″×3″" },
     placement: "default",
     printfile: { width: 900, height: 900 },
+    cover_image: "https://files.cdn.printful.com/products/358/10163_1553083889.jpg",
     lead_time: "Made + shipped in 7–11 days",
   },
 ];
