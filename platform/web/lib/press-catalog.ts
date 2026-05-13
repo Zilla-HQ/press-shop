@@ -124,7 +124,7 @@ export const PRESS_CATALOG: PressProduct[] = [
     id: "tumbler",
     name: "Stainless Steel Tumbler",
     category: "Drinkware",
-    retail_price: 38,
+    retail_price: 44,
     wholesale_estimate: 25,
     description: "20oz tapered stainless steel tumbler. Double-walled insulation, fits standard cup holders. Wraparound print.",
     printful_catalog_id: 909,
