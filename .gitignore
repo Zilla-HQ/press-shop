@@ -1,0 +1,27 @@
+.env
+.env.local
+.env*.local
+*.log
+
+# Only ignore the operator-local stores dir at the repo root.
+# platform/web/data/stores/ is the deployable static-data copy and
+# MUST stay tracked or Vercel can't render brand dashboards.
+/stores/
+
+provisioning/.build/
+__pycache__/
+*.pyc
+.DS_Store
+
+# Working copy — users start from brand.example.json
+brand.json
+
+# Dormant pool registry (contains per-store Develop-app credentials)
+stores_pool.json
+
+# Node / Next.js
+node_modules/
+.next/
+out/
+*.tsbuildinfo
+next-env.d.ts
