@@ -50,6 +50,7 @@ export const PRESS_CATALOG: PressProduct[] = [
     default_variant: { color: "Black", size: "M" },
     placement: "front",
     printfile: { width: 1800, height: 2400 },
+    cover_image: "https://cdn.shopify.com/s/files/1/0750/4894/3670/files/press-sample-tee-mockup.jpg?v=1778684587",
     lead_time: "Made + shipped in 7–11 days",
   },
   {
@@ -63,6 +64,7 @@ export const PRESS_CATALOG: PressProduct[] = [
     default_variant: { color: "Black", size: "M" },
     placement: "front",
     printfile: { width: 1800, height: 2400 },
+    cover_image: "https://cdn.shopify.com/s/files/1/0750/4894/3670/files/press-sample-hoodie-mockup.jpg?v=1778684599",
     lead_time: "Made + shipped in 7–11 days",
   },
 

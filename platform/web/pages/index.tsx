@@ -48,11 +48,13 @@ const Press: NextPage = () => {
             {PRESS_CATALOG.map((p) => (
               <Link key={p.id} href={`/products/${p.id}`} className="press__card">
                 <div className="press__card-image">
-                  {/* Catalog cover image fetched server-side later;
-                      for now show the category as a placeholder color. */}
-                  <div className={`press__card-placeholder press__card-placeholder--${p.category.toLowerCase().replace(/\s+/g, "-")}`}>
-                    {p.category}
-                  </div>
+                  {p.cover_image ? (
+                    <img src={p.cover_image} alt={`${p.name} sample`} />
+                  ) : (
+                    <div className={`press__card-placeholder press__card-placeholder--${p.category.toLowerCase().replace(/\s+/g, "-")}`}>
+                      {p.category}
+                    </div>
+                  )}
                 </div>
                 <div className="press__card-body">
                   <div className="press__card-meta">{p.category}</div>
@@ -155,6 +157,7 @@ const Press: NextPage = () => {
         }
         .press__card:hover { transform: translateY(-2px); border-color: #1A1A1A; }
         .press__card-image { aspect-ratio: 1 / 1; background: #EAE6DD; overflow: hidden; }
+        .press__card-image img { width: 100%; height: 100%; object-fit: cover; }
         .press__card-placeholder {
           width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;
           font-family: "DM Serif Display", Georgia, serif; font-size: 24px;
