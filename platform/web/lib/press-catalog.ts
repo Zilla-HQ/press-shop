@@ -9,15 +9,15 @@
  *   1. Find the Printful catalog id from
  *      `GET https://api.printful.com/products`
  *   2. Pick a default variant (typically the most popular color/size)
- *   3. Look up its `embroidery_*` or `default` / `front` placement
- *      from /mockup-generator/printfiles/<id>
+ *   3. Look up its placement from /mockup-generator/printfiles/<id>
+ *      (most non-apparel products use "default" or "front")
  *   4. Add a row here; the storefront auto-renders a card.
  */
 
 export type PressProduct = {
   id: string;
   name: string;
-  category: "Apparel" | "Headwear" | "Drinkware" | "Bags";
+  category: "Apparel" | "Headwear" | "Drinkware" | "Bags" | "Wall art" | "Stickers";
   retail_price: number;
   wholesale_estimate: number;
   description: string;
@@ -25,7 +25,7 @@ export type PressProduct = {
   printful_catalog_id: number;
   /** Default variant (color + size). Used for blank mockup display + order. */
   default_variant: { color: string; size: string };
-  /** Printful placement id, e.g. "front", "front_dtf", "embroidery_front_large" */
+  /** Printful placement id, e.g. "front", "front_dtf", "embroidery_front_large", "default" */
   placement: string;
   /** Printfile area dimensions for centering uploaded designs. */
   printfile: { width: number; height: number };
@@ -38,6 +38,7 @@ export type PressProduct = {
 };
 
 export const PRESS_CATALOG: PressProduct[] = [
+  // === Apparel ============================================
   {
     id: "tee",
     name: "Heavyweight T-Shirt",
@@ -64,6 +65,8 @@ export const PRESS_CATALOG: PressProduct[] = [
     printfile: { width: 1800, height: 2400 },
     lead_time: "Made + shipped in 7–11 days",
   },
+
+  // === Headwear ===========================================
   {
     id: "cap",
     name: "Embroidered Dad Cap",
@@ -78,6 +81,8 @@ export const PRESS_CATALOG: PressProduct[] = [
     embroidery_thread_default: ["#FFFFFF"],
     lead_time: "Made + shipped in 7–11 days",
   },
+
+  // === Bags ===============================================
   {
     id: "tote",
     name: "Canvas Tote Bag",
@@ -89,6 +94,64 @@ export const PRESS_CATALOG: PressProduct[] = [
     default_variant: { color: "White", size: "One size" },
     placement: "front",
     printfile: { width: 1800, height: 1800 },
+    lead_time: "Made + shipped in 7–11 days",
+  },
+
+  // === Drinkware ==========================================
+  {
+    id: "mug",
+    name: "Ceramic Mug",
+    category: "Drinkware",
+    retail_price: 22,
+    wholesale_estimate: 6,
+    description: "11oz white glossy ceramic mug. Dishwasher + microwave safe. Full-wrap print. The universal merch item.",
+    printful_catalog_id: 19,
+    default_variant: { color: "White", size: "11 oz" },
+    placement: "default",
+    printfile: { width: 2700, height: 1050 },
+    lead_time: "Made + shipped in 7–11 days",
+  },
+  {
+    id: "tumbler",
+    name: "Stainless Steel Tumbler",
+    category: "Drinkware",
+    retail_price: 38,
+    wholesale_estimate: 25,
+    description: "20oz tapered stainless steel tumbler. Double-walled insulation, fits standard cup holders. Wraparound print.",
+    printful_catalog_id: 909,
+    default_variant: { color: "White", size: "20oz" },
+    placement: "front",
+    printfile: { width: 2795, height: 2100 },
+    lead_time: "Made + shipped in 7–11 days",
+  },
+
+  // === Wall art ===========================================
+  {
+    id: "poster",
+    name: "Matte Paper Poster",
+    category: "Wall art",
+    retail_price: 28,
+    wholesale_estimate: 12,
+    description: "Enhanced matte paper, 192 g/m². Museum-grade thickness, fade-resistant. Multiple sizes; defaults to 12×16.",
+    printful_catalog_id: 1,
+    default_variant: { color: "White", size: "12″×16″" },
+    placement: "default",
+    printfile: { width: 4800, height: 3600 },
+    lead_time: "Made + shipped in 7–11 days",
+  },
+
+  // === Stickers ===========================================
+  {
+    id: "sticker",
+    name: "Kiss-Cut Sticker",
+    category: "Stickers",
+    retail_price: 8,
+    wholesale_estimate: 3,
+    description: "Glossy vinyl kiss-cut sticker, 3″×3″. Weatherproof, dishwasher-safe. For laptops, water bottles, helmets, anywhere.",
+    printful_catalog_id: 358,
+    default_variant: { color: "White", size: "3″×3″" },
+    placement: "default",
+    printfile: { width: 900, height: 900 },
     lead_time: "Made + shipped in 7–11 days",
   },
 ];

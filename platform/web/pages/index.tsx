@@ -35,8 +35,9 @@ const Press: NextPage = () => {
           <div className="press__eyebrow">Custom print, on demand</div>
           <h1 className="press__headline">Bring the design.<br />We bring the rest.</h1>
           <p className="press__sub">
-            Upload artwork, pick a blank — shirt, hoodie, cap, tote. We print it, embroider it,
-            ship it. Made when you order it, on your doorstep in seven to eleven days.
+            Upload artwork, pick a blank — shirt, hoodie, cap, tote, mug, tumbler, poster, sticker.
+            We print it, embroider it, ship it. Made when you order it, on your doorstep in seven
+            to eleven days.
           </p>
           <a href="#catalog" className="press__hero-cta">Pick a blank →</a>
         </section>
@@ -49,7 +50,7 @@ const Press: NextPage = () => {
                 <div className="press__card-image">
                   {/* Catalog cover image fetched server-side later;
                       for now show the category as a placeholder color. */}
-                  <div className={`press__card-placeholder press__card-placeholder--${p.category.toLowerCase()}`}>
+                  <div className={`press__card-placeholder press__card-placeholder--${p.category.toLowerCase().replace(/\s+/g, "-")}`}>
                     {p.category}
                   </div>
                 </div>
@@ -73,7 +74,7 @@ const Press: NextPage = () => {
             <li>
               <div className="press__how-num">1</div>
               <h3>Pick a blank</h3>
-              <p>T-shirt, hoodie, cap, tote — Printful's best blanks, the ones premium brands actually use.</p>
+              <p>Shirts, hoodies, caps, totes, mugs, tumblers, posters, stickers. Printful's best blanks, the ones premium brands actually use.</p>
             </li>
             <li>
               <div className="press__how-num">2</div>
@@ -163,6 +164,8 @@ const Press: NextPage = () => {
         .press__card-placeholder--headwear { background: linear-gradient(135deg, #DAD3BD 0%, #B9AE92 100%); }
         .press__card-placeholder--drinkware { background: linear-gradient(135deg, #E0DBC9 0%, #C5BCA1 100%); }
         .press__card-placeholder--bags { background: linear-gradient(135deg, #EDE9DC 0%, #D4CCB3 100%); }
+        .press__card-placeholder--wall-art { background: linear-gradient(135deg, #E5DDC8 0%, #C2B595 100%); }
+        .press__card-placeholder--stickers { background: linear-gradient(135deg, #F0E8D2 0%, #C9BB95 100%); }
         .press__card-body { padding: 24px; display: flex; flex-direction: column; gap: 8px; }
         .press__card-meta { text-transform: uppercase; letter-spacing: 0.12em; font-size: 11px; color: #888; }
         .press__card-title {
